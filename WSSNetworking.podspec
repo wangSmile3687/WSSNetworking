@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/WSmilec/WSSNetworking'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '18566663687@163.com' => 'wangsi@51jianjiao.com' }
+  s.author           = { 'wangsi' => '18566663687@163.com' }
   s.source           = { :git => 'https://github.com/WSmilec/WSSNetworking.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 

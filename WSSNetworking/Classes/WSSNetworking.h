@@ -7,5 +7,5 @@
 
 #import "WSSNetworkConfig.h"
 #import "WSSNetworkProtocol.h"
-#import "WSSSNetworkManager.h"
+#import "WSSNetworkManager.h"
 #import "WSSRequest.h"

@@ -20,9 +20,45 @@ it, simply add the following line to your Podfile:
 pod 'WSSNetworking'
 ```
 
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+// Override point for customization after application launch.
+
+[WSSNetworkConfig sharedConfig].baseUrl = @"http://XXXX";
+
+[WSSNetworkConfig sharedConfig].debugLogEnabled = YES;
+
+[WSSNetworkConfig sharedConfig].networkProtocol = [TestNetworkHandle sharedProtocol];
+
+return YES;
+}
+
+WSSRequest *request = [[WSSRequest alloc] initWithRequestMethod:WSSRequestMethodPOST fullUrl:nil requestUrl:@"XXX" requestArgument:@{@"page_num":@"1",@"page_size":@"20"}];
+
+[request startRequestWithSuccess:^(WSSRequest * _Nullable request) {
+
+NSLog(@"----------request   success------   %@",request.responseObject);
+
+} failure:^(WSSRequest * _Nullable request) {
+
+NSLog(@"----------request   failure------   %@",request.responseObject);
+
+}];
+
+//    request.delegate = self;
+
+//    [request startRequest];
+
+- (void)requestFailure:(WSSRequest *)request {
+}
+
+- (void)requestSuccess:(WSSRequest *)request {
+}
+
 ## Author
 
-18566663687@163.com, wangsi@51jianjiao.com
+wangsi,18566663687@163.com
 
 ## License
 

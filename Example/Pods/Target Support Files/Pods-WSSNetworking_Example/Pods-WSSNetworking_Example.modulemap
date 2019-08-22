@@ -1,0 +1,6 @@
+framework module Pods_WSSNetworking_Example {
+  umbrella header "Pods-WSSNetworking_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -14,6 +14,7 @@
 #import "WSSNetworking.h"
 #import "WSSNetworkManager.h"
 #import "WSSNetworkProtocol.h"
+#import "WSSNetworkReachabilityManager.h"
 #import "WSSRequest.h"
 
 FOUNDATION_EXPORT double WSSNetworkingVersionNumber;

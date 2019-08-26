@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WSSNetworking'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.summary          = 'Networking.'
 
 # This description is used to generate tags and improve search results.
@@ -30,8 +30,8 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'WSSNetworking/Classes/**/*'
-  
+#  s.source_files = 'WSSNetworking/Classes/**/*'
+
   # s.resource_bundles = {
   #   'WSSNetworking' => ['WSSNetworking/Assets/*.png']
   # }
@@ -39,4 +39,11 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
    s.dependency 'AFNetworking'
+   
+   s.subspec 'WSSNetworkManager' do |ss|
+     ss.source_files = 'WSSNetworking/Classes/WSSNetworkManager/**/*'
+   end
+   s.subspec 'WSSReachabilityManager' do |ss|
+     ss.source_files = 'WSSNetworking/Classes/WSSReachabilityManager/**/*'
+   end
 end

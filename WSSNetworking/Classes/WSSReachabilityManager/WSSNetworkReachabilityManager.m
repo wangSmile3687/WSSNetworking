@@ -64,6 +64,7 @@ static NSString *const WSSNetworkOfflineModel = @"WSSOfflineModel";
     [manger startMonitoring];
 }
 - (void)stopMonitoring {
+    self.firstNetworkStatusChange = YES;
     [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
 }
 - (void)setNetworkOfflineModel:(BOOL)offline {

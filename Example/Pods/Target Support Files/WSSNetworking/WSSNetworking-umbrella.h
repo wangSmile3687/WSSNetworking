@@ -14,8 +14,8 @@
 #import "WSSNetworking.h"
 #import "WSSNetworkManager.h"
 #import "WSSNetworkProtocol.h"
-#import "WSSNetworkReachabilityManager.h"
 #import "WSSRequest.h"
+#import "WSSNetworkReachabilityManager.h"
 
 FOUNDATION_EXPORT double WSSNetworkingVersionNumber;
 FOUNDATION_EXPORT const unsigned char WSSNetworkingVersionString[];

@@ -14,13 +14,13 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - WSSNetworking (0.0.4):
+  - WSSNetworking (0.0.5):
     - AFNetworking
-    - WSSNetworking/WSSNetworkManager (= 0.0.4)
-    - WSSNetworking/WSSReachabilityManager (= 0.0.4)
-  - WSSNetworking/WSSNetworkManager (0.0.4):
+    - WSSNetworking/WSSNetworkManager (= 0.0.5)
+    - WSSNetworking/WSSReachabilityManager (= 0.0.5)
+  - WSSNetworking/WSSNetworkManager (0.0.5):
     - AFNetworking
-  - WSSNetworking/WSSReachabilityManager (0.0.4):
+  - WSSNetworking/WSSReachabilityManager (0.0.5):
     - AFNetworking
 
 DEPENDENCIES:
@@ -36,7 +36,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  WSSNetworking: 715b507359151a5e4fd7360030a314c51af5e862
+  WSSNetworking: 79aa262164a71941788716383e397267d48bbc54
 
 PODFILE CHECKSUM: 44dff485ce73a68d5eccc6a603f941166437edc8
 

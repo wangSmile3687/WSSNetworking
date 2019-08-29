@@ -69,6 +69,8 @@ typedef void(^WSSRequestFailureBlock)(WSSRequest * _Nullable request);
 @property (nonatomic, assign)             WSSResponseSerializerType    responseSerializerType;
 /// request method
 @property (nonatomic, assign)             WSSRequestPriority           requestPriority;
+/// identify request.
+@property (nonatomic, assign)             NSInteger                    tag;
 /// baseURL ,http://www.example.com
 @property (nonatomic, copy, nullable)     NSString                    *baseUrl;
 /// Additional HTTP request header field

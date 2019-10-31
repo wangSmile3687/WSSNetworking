@@ -145,7 +145,12 @@
     NSError *requestError = nil;
     request.responseObject = responseObject;
     if ([request.responseObject isKindOfClass:[NSData class]]) {
-        request.responseObject = [[NSString alloc] initWithData:responseObject encoding:[self stringEncodingWithRequest:request]];
+        NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+               if (responseDict.count > 0) {
+                   request.responseObject = responseDict;
+               } else {
+                   request.responseObject = [[NSString alloc] initWithData:responseObject encoding:[self stringEncodingWithRequest:request]];
+               }
         switch (request.responseSerializerType) {
             case WSSResponseSerializerTypeHTTP:
                 break;

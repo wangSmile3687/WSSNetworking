@@ -23,15 +23,10 @@
     
     WSSRequest *request = [[WSSRequest alloc] initWithRequestMethod:WSSRequestMethodPOST fullUrl:nil requestUrl:@"XXX" requestArgument:@{@"page_num":@"1",@"page_size":@"20"}];
     [request startRequestWithSuccess:^(WSSRequest * _Nullable request) {
-
         NSLog(@"----------request   success------   %@",request.responseObject);
 
-
     } failure:^(WSSRequest * _Nullable request) {
-
         NSLog(@"----------request   failure------   %@",request.responseObject);
-
-
     }];
 //    request.delegate = self;
 //    [request startRequest];
@@ -43,7 +38,10 @@
 //    });
     
     
+   
+    
 }
+#pragma mark - WSSRequestDelegate
 
 - (void)requestFailure:(WSSRequest *)request {
     

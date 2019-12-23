@@ -6,39 +6,39 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 
-UIKIT_EXTERN NSString *const WSNetworkStatusChangeNotification;
-
-typedef NS_ENUM(NSInteger, WSSNetworkStatus) {
-    WSSNetworkStatusUnKnown = 0,
-    WSSNetworkStatusWiFi,
-    WSSNetworkStatusWan,
-    WSSNetworkStatusNoNetwork,
+typedef NS_ENUM(NSInteger, WSSNetworkReachabilityStatus) {
+    WSSNetworkReachabilityStatusNotReachable     = 0,
+    WSSNetworkReachabilityStatusReachableViaWWAN = 1,
+    WSSNetworkReachabilityStatusReachableViaWiFi = 2,
 };
-typedef void(^FirstNetworkStatusChangeBlock)(void);
+
+extern NSString *kWSSNetworkReachabilityChangedNotification;
+extern NSString *kWSSNetworkingReachabilityNotificationStatusItem;
 
 @interface WSSNetworkReachabilityManager : NSObject
-@property (nonatomic, assign) WSSNetworkStatus networkStatus;
-@property (nonatomic, copy)   FirstNetworkStatusChangeBlock firstNetworkStatusChangeBlock;
-+ (WSSNetworkReachabilityManager *)sharedManager;
-/**
- 开始监听网络状况
+/*!
+ * Checks whether the default route is available. Should be used by applications that do not connect to a particular host.
  */
-- (void)startMonitoring;
-/**
- 停止监听网络状况
++ (instancetype)reachability;
+/*!
+ * Use to check the reachability of a given host name.
  */
++ (instancetype)reachabilityWithHostName:(NSString *)hostName;
+/*!
+ * Use to check the reachability of a given IP address.
+ */
++ (instancetype)reachabilityWithAddress:(const void *)hostAddress;
+/// Starts monitoring for changes in network reachability status.
+- (BOOL)startMonitoring;
+///  Stops monitoring for changes in network reachability status
 - (void)stopMonitoring;
-/**
- 设置离线模式 默认no
- @param offline offline-yes  online-no
+/// current reachability status
+- (WSSNetworkReachabilityStatus)currentReachabilityStatus;
+/*!
+ * WWAN may be available, but not active until a connection has been established. WiFi may require a connection for VPN on Demand.
  */
-- (void)setNetworkOfflineModel:(BOOL)offline;
-/**
- 获取离线模式状态
- 
- @return yes-offline   no-online
- */
-- (BOOL)getNetworkOfflineModel;
+- (BOOL)connectionRequired;
 @end
 

@@ -8,7 +8,11 @@
 
 #import "WSSAppDelegate.h"
 #import "TestNetworkHandle.h"
-#import <WSSNetworkConfig.h>
+#import <WSSNetworking/WSSNetworking.h>
+#import <WSSNetworking/WSSNetworkReachabilityManager.h>
+@interface WSSAppDelegate ()
+@property (nonatomic, strong) WSSNetworkReachabilityManager *networkReachabilityManager;
+@end
 @implementation WSSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -17,8 +21,24 @@
     [WSSNetworkConfig sharedConfig].baseUrl = @"http://XXXX";
     [WSSNetworkConfig sharedConfig].debugLogEnabled = YES;
     [WSSNetworkConfig sharedConfig].networkProtocol = [TestNetworkHandle sharedProtocol];
+    
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkChanged:) name:kWSSNetworkReachabilityChangedNotification object:nil];
+    self.networkReachabilityManager = [WSSNetworkReachabilityManager reachability];
+    [self.networkReachabilityManager startMonitoring];
+    WSSNetworkReachabilityStatus networkStatus = [self.networkReachabilityManager currentReachabilityStatus];
+
+    
     return YES;
 }
+- (void)networkChanged:(NSNotification *)notif {
+    NSDictionary *userInfo = notif.userInfo;
+    WSSNetworkReachabilityStatus networkStatus = [userInfo[kWSSNetworkingReachabilityNotificationStatusItem] integerValue];
+   
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

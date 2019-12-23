@@ -44,7 +44,11 @@ typedef NS_ENUM(NSInteger, WSSRequestPriority) {
 typedef void(^WSSRequestSuccessBlock)(WSSRequest * _Nullable request);
 typedef void(^WSSRequestFailureBlock)(WSSRequest * _Nullable request);
 @interface WSSRequest : NSObject
-/// init request  by Conventional parameters
+/// init reques
+/// @param requestMethod request method
+/// @param fullUrlStr full url
+/// @param requestUrl path url
+/// @param requestArgument  Argument
 - (instancetype _Nullable )initWithRequestMethod:(WSSRequestMethod)requestMethod
                                          fullUrl:(NSString *_Nullable)fullUrlStr
                                       requestUrl:(NSString *_Nullable)requestUrl

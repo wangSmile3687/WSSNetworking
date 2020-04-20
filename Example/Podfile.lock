@@ -14,12 +14,12 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - WSSNetworking (0.0.9):
-    - WSSNetworking/WSSNetworkManager (= 0.0.9)
-    - WSSNetworking/WSSReachabilityManager (= 0.0.9)
-  - WSSNetworking/WSSNetworkManager (0.0.9):
+  - WSSNetworking (0.1.0):
+    - WSSNetworking/WSSNetworkManager (= 0.1.0)
+    - WSSNetworking/WSSReachabilityManager (= 0.1.0)
+  - WSSNetworking/WSSNetworkManager (0.1.0):
     - AFNetworking
-  - WSSNetworking/WSSReachabilityManager (0.0.9)
+  - WSSNetworking/WSSReachabilityManager (0.1.0)
 
 DEPENDENCIES:
   - WSSNetworking (from `../`)
@@ -34,8 +34,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  WSSNetworking: 7ee24c0322ab4267c9c2617a5fa4f628ace4b947
+  WSSNetworking: 76204d07e5ca9bab5f66b3167091272318cc1647
 
-PODFILE CHECKSUM: 2583a9d2f7ec561a6a878d0009307d461505cc3a
+PODFILE CHECKSUM: bfe7b4bc4a40379701f44b7841b1415fe941b75a
 
 COCOAPODS: 1.8.3

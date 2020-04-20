@@ -1,9 +1,11 @@
 
-source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '9.0'
 
 target 'WSSNetworking_Example' do
+  
+  source 'https://github.com/CocoaPods/Specs.git'
+
   pod 'WSSNetworking', :path => '../'
 
   target 'WSSNetworking_Tests' do

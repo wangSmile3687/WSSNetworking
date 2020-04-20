@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WSSNetworking'
-  s.version          = '0.0.7'
+  s.version          = '0.0.8'
   s.summary          = 'Networking.'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/WSmilec/WSSNetworking.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
 #  s.source_files = 'WSSNetworking/Classes/**/*'
 
@@ -38,10 +38,10 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-   s.dependency 'AFNetworking'
    
    s.subspec 'WSSNetworkManager' do |ss|
      ss.source_files = 'WSSNetworking/Classes/WSSNetworkManager/**/*'
+     ss.dependency 'AFNetworking'
    end
    s.subspec 'WSSReachabilityManager' do |ss|
      ss.source_files = 'WSSNetworking/Classes/WSSReachabilityManager/**/*'

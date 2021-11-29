@@ -1,6 +1,6 @@
 {
   "name": "WSSNetworking",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "Networking.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/WSmilec/WSSNetworking",
@@ -9,11 +9,11 @@
     "file": "LICENSE"
   },
   "authors": {
-    "wangsi": "18566663687@163.com"
+    "wangsi": "17601013687@163.com"
   },
   "source": {
     "git": "https://github.com/WSmilec/WSSNetworking.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "9.0"
